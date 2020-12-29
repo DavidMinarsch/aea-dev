@@ -27,7 +27,8 @@ summaryLength = 30
   homepage_button_link = '/blog'
   homepage_button_text = 'Read the blog'
   homepage_intro = 'AEA.dev is a site for developers and researchers working with the AEA framework.'
-  homepage_image = '/images/terminal.gif'
+  # homepage_image = 'https://www.youtube.com/watch?v=gvzYX7CYk-A'
+  homepage_video = 'https://www.youtube.com/embed/gvzYX7CYk-A'
 
   ## You can enable to add anchor links to header elements
   # enable_anchor_link = true
