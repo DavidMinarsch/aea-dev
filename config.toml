@@ -44,5 +44,5 @@ summaryLength = 30
     meta_twitter_creator = "@david_enim"
 
   [params.logo]
-      mobile = "/images/logo.png"
-      standard  = "/images/logo.png"
+      mobile = "/images/logo.svg"
+      standard  = "/images/logo.svg"

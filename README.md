@@ -7,6 +7,11 @@ A repo for aea.dev site
 hugo server -D
 ```
 
+The gif is produced using these tools:
+
+- https://github.com/asciinema/asciinema
+- https://github.com/asciinema/asciicast2gif
+
 ## Build
 
 ``` bash

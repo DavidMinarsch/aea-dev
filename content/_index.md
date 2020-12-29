@@ -1,6 +1,6 @@
 ---
 title: 'AEA.dev'
-date: 2018-11-28T15:14:39+10:00
+date: 2020-12-28T22:00:00+00:00
 ---
 
-AEA.dev is a site providing complementary information for developers and researchers working with the Autonomous Economic Agent (AEA) [framework](https://github.com/fetchai/agents-aea). 
+AEA.dev is a site providing information for developers and researchers working with the Autonomous Economic Agent (AEA) [framework](https://github.com/fetchai/agents-aea). 
