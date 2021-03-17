@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'GT Haptik';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("fonts/GT-Haptik-Regular.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'GT Haptik';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/GT-Haptik-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GT Haptik';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('fonts/GT-Haptik-Regular-Rotalic.woff2') format('woff2');
+}
