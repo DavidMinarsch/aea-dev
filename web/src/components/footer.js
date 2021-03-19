@@ -1,14 +1,24 @@
-import { Text, Flex, HStack, Box, Link } from '@chakra-ui/react'
+import { Text, Flex, HStack, Box, Link, Image } from '@chakra-ui/react'
 import React from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import logo from '../images/aea-logo.svg'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
 
 const Footer = () => (
-  <Box as="footer" py={12} textAlign="center">
+  <Box as="footer" px={6} py={12} textAlign="center"  bgGradient="linear(to-l, pink.600, gray.700)">
     <Flex justifyContent="space-between" alignItems='center'>
       <Box>
         <Flex>
+          <HStack spacing={6}>
+            <Text>© AEA {new Date().getFullYear()}</Text>
+            <Link to='/blog'>Blog</Link>
+            <Link href='https://fetch.ai'>Docs</Link>
+          </HStack>
+        </Flex>
+      </Box>
+      <HStack spacing={6}>
+        <Link><FaTwitter /></Link>
+        <Link><FaGithub /></Link>
           <Link
             as={GatsbyLink}
             to="/"
@@ -16,18 +26,8 @@ const Footer = () => (
             _hover={{ textDecor: 'none' }}
             mr={6}
           >
-            <img src={logo} alt="Logo" />
+            <Image src={logo} alt="Logo" w={100} />
           </Link>
-          <HStack spacing={6}>
-            <Text>© {new Date().getFullYear()}</Text>
-            <Link>Blog</Link>
-            <Link>Docs</Link>
-          </HStack>
-        </Flex>
-      </Box>
-      <HStack spacing={6}>
-        <Link><FaTwitter /></Link>
-        <Link><FaGithub /></Link>
       </HStack>
     </Flex>
   </Box>

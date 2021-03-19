@@ -7,8 +7,9 @@ const PlaceholderTeamItem = () => {
   return (<Box textAlign='center' maxW="300">
     <Image src={davidImage} mx="auto" mb={3} />
     <Heading mb={3} size="lg">David Minarsch</Heading>
-    <Text mb={3}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum accumsan dictumst pharetra at.</Text>
-    <FaTwitter mx="auto" textAlign="center" />
+    <Text mb={3}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fermentum accumsan dictumst pharetra at.
+      <FaTwitter display='inline' />
+    </Text>
   </Box>);
 }
 

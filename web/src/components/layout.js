@@ -24,11 +24,11 @@ const Layout = ({ children }) => {
     }
   `)
   return (
-    <Box px={6}>
+    <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Box as="main">{children}</Box>
       <Footer />
-    </Box>
+    </>
   )
 }
 
