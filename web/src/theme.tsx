@@ -3,7 +3,7 @@ import { extendTheme } from "@chakra-ui/react"
 const theme = extendTheme({
   config: {
     initialColorMode: 'dark',
-    useSystemColorMode: true,
+    useSystemColorMode: false,
   },
   styles: {
     global: {
@@ -12,6 +12,13 @@ const theme = extendTheme({
         fontSize: 'lg'
       },
     },
+  },
+  components: {
+    Divider: {
+      baseStyle: {
+        borderColor: 'white'
+      }
+    }
   },
   colors: {
     gray: {

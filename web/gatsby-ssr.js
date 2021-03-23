@@ -8,7 +8,6 @@ import { wrapPageElement as wrap } from './src/root-wrapper'
 import React from "react"
 import theme from "./src/theme"
 import { ColorModeScript } from "@chakra-ui/react"
-import Fonts from './src/components/fonts'
 
 export const wrapPageElement = wrap
 
@@ -17,7 +16,6 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
     <ColorModeScript
       initialColorMode={theme.config.initialColorMode}
       key="chakra-ui-no-flash"
-    />,
-    <Fonts />
+    />
   ])
 }
