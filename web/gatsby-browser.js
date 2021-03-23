@@ -5,17 +5,17 @@
  */
 
  import { wrapPageElement as wrap } from './src/root-wrapper'
- import React from "react"
- import theme from "./src/theme"
- import { ColorModeScript } from "@chakra-ui/react"
+ // import React from "react"
+ // import theme from "./src/theme"
+ // import { ColorModeScript } from "@chakra-ui/react"
  
  export const wrapPageElement = wrap
  
- export const onRenderBody = ({ setPreBodyComponents }) => {
-   setPreBodyComponents([
-     <ColorModeScript
-       initialColorMode={theme.config.initialColorMode}
-       key="chakra-ui-no-flash"
-     />
-   ])
- }
+ // export const onRenderBody = ({ setPreBodyComponents }) => {
+ //   setPreBodyComponents([
+ //     <ColorModeScript
+ //       initialColorMode={theme.config.initialColorMode}
+ //       key="chakra-ui-no-flash"
+ //     />
+ //   ])
+ // }

@@ -1,8 +1,7 @@
 import * as React from "react"
-import { Heading, Text, Box, Image, Link as ChakraLink, Button, Center, Divider, SimpleGrid, Flex, Link } from "@chakra-ui/react"
+import { Heading, Text, Box, Image, Button, Center, Divider, SimpleGrid, Link } from "@chakra-ui/react"
 
 import SEO from "../components/seo"
-import TeamItem from "../components/team-item"
 import fetchLogo from '../images/fetch-logo.png'
 import centralityLogo from '../images/centrality-logo.svg'
 import heroBackground from '../images/hero-background.png'

@@ -12,12 +12,12 @@ const Footer = () => (
           <HStack spacing={6}>
             <Text>© AEA {new Date().getFullYear()}</Text>
             <Link as={GatsbyLink} to='/blog'>Blog</Link>
-            <Link href="https://docs.fetchai.com" isExternal href='https://fetch.ai'>Docs</Link>
+            <Link isExternal href='https://docs.fetch.ai'>Docs</Link>
           </HStack>
         </Flex>
       </Box>
       <HStack spacing={6}>
-        {/* <Link to="https://twitter.com/"><FaTwitter /></Link> */}
+        <Link isExternal href="https://twitter.com/"><FaTwitter /></Link>
         <Link isExternal href="https://github.com/fetchai/agents-aea"><FaGithub /></Link>
           <Link
             as={GatsbyLink}
