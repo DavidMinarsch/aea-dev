@@ -1,24 +1,39 @@
-import { Box, Heading, Center, Text, Button } from '@chakra-ui/layout';
+import { Box, Heading, Center, Text, Button, SimpleGrid } from '@chakra-ui/react';
 import { graphql, Link } from 'gatsby';
 import React from 'react';
+import Img from 'gatsby-image'
 
 const Blog = ({data}) => {
-  return ( <Box px={6} py={28}>
-    <Heading size="4xl" mb={12}>Blog</Heading>
-    {console.log(data)}
-    {
-      data.allMdx.edges.map(
-        post =>
-        <Box key={post.node.id}>
-          <Box mb={6} height={350} backgroundColor="gray.900" borderRadius={10} textAlign="center"><Center h="100%"><Text>Illustration</Text></Center></Box>
-          <Heading mb={3}>{post?.node?.frontmatter.title}</Heading>
-          <Heading size="md" mb={3}>{post?.node?.frontmatter.author} · {post?.node?.frontmatter.date}</Heading>
-          <Text mb={3}>{post?.node?.frontmatter.excerpt}</Text>
-          <Link to={post.node.slug}>Read now</Link>
-        </Box>
-      )
-    }
-  </Box> );
+  
+  return ( 
+    <>
+      <Box px={6} py={28} maxW={1200} mx="auto">
+        <Heading size="4xl" mb={12}>Blog</Heading>
+        {
+          data.allMdx.edges.map(
+            post => {
+              const link = `/${post?.node?.slug}`
+
+              return (
+                <SimpleGrid key={post.node.id} columns={{base: 1, lg: 2}} spacing={12} alignItems="center">
+                  <Box>
+                    <Link to={link}><Heading mb={6}>{post?.node?.frontmatter.title}</Heading></Link>
+                    <Heading size="md" mb={6}>{post?.node?.frontmatter.author} · {post?.node?.frontmatter.date}</Heading>
+                    <Text mb={6}>{post?.node?.frontmatter.excerpt}</Text>
+                    <Button colorScheme="pink" as={Link} to={link}>Read now</Button>
+                  </Box>
+                  <Link to={link}>
+                    <Box minH={400}>
+                      {post?.node?.frontmatter?.image && <Img fluid={post?.node?.frontmatter?.image?.childImageSharp?.fluid} />}
+                    </Box>
+                  </Link>
+                </SimpleGrid>
+              )
+            }
+          )
+        }
+      </Box>
+    </> );
 }
 
 export const data = graphql`
@@ -34,7 +49,14 @@ query BlogQuery {
           title
           author
           excerpt
-          date
+          image {
+            childImageSharp {
+              fluid(maxWidth: 600, maxHeight: 400) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          date(formatString: "Do MMMM YYYY")
         }
         slug
       }

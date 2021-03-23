@@ -11,14 +11,14 @@ const Footer = () => (
         <Flex>
           <HStack spacing={6}>
             <Text>© AEA {new Date().getFullYear()}</Text>
-            <Link to='/blog'>Blog</Link>
-            <Link href='https://fetch.ai'>Docs</Link>
+            <Link as={GatsbyLink} to='/blog'>Blog</Link>
+            <Link href="https://docs.fetchai.com" isExternal href='https://fetch.ai'>Docs</Link>
           </HStack>
         </Flex>
       </Box>
       <HStack spacing={6}>
-        <Link><FaTwitter /></Link>
-        <Link><FaGithub /></Link>
+        {/* <Link to="https://twitter.com/"><FaTwitter /></Link> */}
+        <Link isExternal href="https://github.com/fetchai/agents-aea"><FaGithub /></Link>
           <Link
             as={GatsbyLink}
             to="/"
