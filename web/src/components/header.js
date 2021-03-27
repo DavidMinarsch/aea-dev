@@ -11,7 +11,7 @@ const MenuItems = ({showMd, isOpen = false}) =>
       <Link as={GatsbyLink}  to="/#partners" smooth={true} offset={-75} duration={200}>Partners</Link>
       <Link as={GatsbyLink}  to="/#research" smooth={true} offset={-75} duration={200}>Research</Link>
       <Link as={GatsbyLink} to='/blog' mr={6}>Blog</Link>
-      <Button as={Link} href="https://docs.fetch.ai" isExternal display={{base: showMd, lg: 'inherit'}} colorScheme="pink" size='lg'>Read the Docs</Button>
+      <Button as={Link} href="https://docs.fetch.ai/aea" isExternal display={{base: showMd, lg: 'inherit'}} colorScheme="pink" size='lg'>Read the Docs</Button>
     </Stack>
   </Flex>
 
