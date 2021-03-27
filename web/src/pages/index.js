@@ -7,6 +7,7 @@ import centralityLogo from '../images/centrality-logo.svg'
 import heroBackground from '../images/hero-background.png'
 import { FaTwitter } from "react-icons/fa"
 import {QueryClientProvider, QueryClient} from 'react-query'
+import { Link as GatsbyLink } from 'gatsby'
 
 import BlogPosts from "../components/homepage-sections/blog-posts"
 import CreatorsAndContributorsSection from "../components/homepage-sections/creators-and-contributors"
@@ -21,7 +22,7 @@ const IndexPage = () => (
       <Center h="100%" zIndex={2}>
         <Box textAlign="center">
           <Heading mb={6} size="2xl">Build the Foundations<br />of the Machine Economy</Heading>
-          <Button size="lg" colorScheme="pink" as={Link} isExternal href="https://docs.fetch.ai" _hover={{textDecor: 'none', backgroundColor: "pink.600", color: 'pink.100'}}>Read the Docs</Button>
+          <Button size="lg" colorScheme="pink" as={Link} isExternal href="https://docs.fetch.ai/aea" _hover={{textDecor: 'none', backgroundColor: "pink.600", color: 'pink.100'}}>Read the Docs</Button>
         </Box>
       </Center>
     </Box>
@@ -33,7 +34,7 @@ const IndexPage = () => (
             <Divider my={6} w={50} mx="auto" />
           </Box>
           <SimpleGrid columns={{base: 1, md: 2}} spacing={10} alignItems="center">
-            <Text maxW="400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius a rhoncus imperdiet quis morbi nulla. Nisl massa vitae nec sit magna curabitur. Fringilla lacus orci eget aliquet in augue. Morbi felis massa tincidunt dolor, amet orci eget vehicula aenean. Enim velit non pretium, nec pharetra, arcu. Enim dignissim convallis venenatis dolor tristique posuere et sit nisl. </Text>
+            <Text maxW="400">AEAs or Autonomous Economic Agents are software agents that act on behalf of a human or organisation to further their owner's economic goals.</Text>
             <Box backgroundColor="gray.900" borderRadius={10} textAlign="center" h="400"><Center h="100%"><Text>Illustration</Text></Center></Box>
           </SimpleGrid>
         </Box>
@@ -65,8 +66,8 @@ const IndexPage = () => (
         <Box>
           <Heading mb={3}>Trading Agent Competition with Autonomous Economic Agents</Heading>
           <Heading size="md" mb={3}>David Minarsch, Seyed Ali Hosseini, Marco Favorito, and Jonathan Ward</Heading>
-          <Text mb={6}>Short blurb – Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec pulvinar arcu enim diam lacus at nunc. Lorem placerat turpis sed dui feugiat pulvinar integer orci dolor. Proin risus platea mi mollis metus, nulla diam eleifend rhoncus. Posuere nunc viverra sem netus in vitae egestas eu viverra.</Text>
-          <Button>Read the Paper</Button>
+          <Text mb={6}>We provide a case study for the Autonomous Economic Agent (AEA) framework; a toolkit for the development and deployment of autonomous agents with a focus on economic activities. The use case is the trading agent competition (TAC). It is a competition between autonomous agents with customisable strategies and market parameters. The competition is facilitated by the AEA framework’s native support for decentralised ledger technologies, i.e. permissionless blockchains and smart contract functionality, for immutable transaction recording and trade settlement. We provide an open-source implementation, study the result of the competitions we ran, and compare it to theoretical results in the economics literature. We conclude by discussing its real-world applications in crypto-currency, digital assets and token trading</Text>
+          <Button as={Link} isExternal href="https://www.scitepress.org/Papers/2021/104318/104318.pdf">Read the Paper</Button>
         </Box>
         <Box height={500} backgroundColor="gray.900" borderRadius={10} textAlign="center"><Center h="100%"><Text>Illustration</Text></Center></Box>
       </SimpleGrid>
@@ -75,15 +76,15 @@ const IndexPage = () => (
         <Box>
           <Heading mb={3}>Autonomous Economic Agents as a Second Layer Technology for Blockchains</Heading>
           <Heading size="md" mb={3}>David Minarsch, Seyed Ali Hosseini, Marco Favorito, and Jonathan Ward</Heading>
-          <Text mb={6}>Short blurb – Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec pulvinar arcu enim diam lacus at nunc. Lorem placerat turpis sed dui feugiat pulvinar integer orci dolor. Proin risus platea mi mollis metus, nulla diam eleifend rhoncus. Posuere nunc viverra sem netus in vitae egestas eu viverra.</Text>
-          <Button>Read the Paper</Button>
+          <Text mb={6}>The user experience of interacting with distributed ledger technologies (DLT) is fraught with excessive complexity, high risk and unintuitive processes. Moreover, smart contracts deployed in these systems are restricted to being reactive. These limitations have negative implications on user adoption and prevent DLTs from being general purpose. We introduce a framework for the development of Autonomous Economic Agents (AEAs), software agents that act autonomously and pursue an economic goal, and demonstrate how AEAs complement existing decentralised ledgers as a second layer technology. In particular, the framework enables a simplified user experience through automation, supports modularisation and reuse of complex decision making and machine learning capabilities, and allows for proactive behaviour facilitating autonomy. We demonstrate these gains in the context of a specific use-case, a multi-agent trading system modelling a Walrasian Exchange Economy populated by a number of agents trading a basket of tokens.</Text>
+          <Button as={Link} isExternal href="https://ieeexplore.ieee.org/abstract/document/9150195">Read the Paper</Button>
         </Box>
       </SimpleGrid>
     </Box>
     <Box as="section" py={28}  bgGradient="linear(to-br, gray.900, gray.700)">
       <Box textAlign="center" mb={12}>
         <Heading mb={6} size="lg" fontStyle="italic">Latest from the Blog</Heading>
-        <Link to="blog" mb={6} display="inline-block" color="gray.200">See All →</Link>
+        <Link as={GatsbyLink} to="/blog" mb={6} display="inline-block" color="gray.200">See All →</Link>
         <Divider borderColor="gray.900" my={6} w={50} mx="auto" />
       </Box>
       <BlogPosts />
