@@ -2,7 +2,6 @@ import { Box, Heading, Text } from '@chakra-ui/layout';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
-import Dump from '../components/Dump';
 import Img from 'gatsby-image'
 
 const BlogPost =  (

@@ -1,8 +1,7 @@
-import { Box, Button, Flex, Heading, HStack, Image, Link, Stack, useDisclosure } from '@chakra-ui/react'
+import { Box, Button, Flex, Image, Link, Stack, useDisclosure } from '@chakra-ui/react'
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
 import logo from '../images/aea-logo.svg'
-import Dump from './Dump'
 
 const MenuItems = ({showMd, isOpen = false}) => 
   <Flex>
@@ -23,7 +22,6 @@ const Header = () => {
   
   return (
   <Box as="header" p={6} position="sticky" top={0} bgGradient="linear(to-r, pink.600, gray.700)" zIndex={100}>
-    {/* <Dump data={path} /> */}
     <Flex alignItems="center" justifyContent="space-between">
         <Link
           as={GatsbyLink}
