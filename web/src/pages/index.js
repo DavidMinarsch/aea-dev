@@ -91,7 +91,7 @@ const IndexPage = () => (
     </Box>
     <Box as="section" py={28} textAlign="center"  bgGradient="linear(to-tr, gray.900, gray.700)">
       <Heading mb={6} size="lg">Stay in touch!</Heading>
-      <Button size="lg"><Box mr={2}>
+      <Button as={Link} isExternal href="https://twitter.com/aea_dev" size="lg"><Box mr={2}>
         <FaTwitter />
       </Box> Follow Us on Twitter</Button>
     </Box>
