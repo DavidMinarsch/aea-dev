@@ -34,7 +34,7 @@ const IndexPage = () => (
             <Divider my={6} w={50} mx="auto" />
           </Box>
           <SimpleGrid columns={{base: 1, md: 2}} spacing={10} alignItems="center">
-            <Text maxW="400">AEAs or Autonomous Economic Agents are software agents that act on behalf of a human or organisation to further their owner's economic goals.<br /><br />Equiped with cryptographic key pairs they send messages, trade on blockchains and perform other useful tasks for their owner. </Text>
+            <Text maxW="400">AEAs or Autonomous Economic Agents are software agents that act on behalf of a human or organisation to further their owner's economic goals.<br /><br />Equipped with cryptographic key pairs they send messages, trade on blockchains and perform other useful tasks for their owner. </Text>
             <Box backgroundColor="gray.900" borderRadius={10} textAlign="center" h="400"><Center h="100%"><Text>Illustration</Text></Center></Box>
           </SimpleGrid>
         </Box>
