@@ -48,25 +48,8 @@ const IndexPage = () => (
       ></Box>
       <Center h="100%" zIndex={2}>
         <Box textAlign="center">
-          <Heading mb={6} size="2xl">
-            Build the Foundations
-            <br />
-            of the Machine Economy
-          </Heading>
-          <Button
-            size="lg"
-            colorScheme="pink"
-            as={Link}
-            isExternal
-            href="https://docs.fetch.ai/aea"
-            _hover={{
-              textDecor: "none",
-              backgroundColor: "pink.600",
-              color: "pink.100",
-            }}
-          >
-            Read the Docs
-          </Button>
+          <Heading mb={6} size="2xl">Agents that work for you,<br />and only for you</Heading>
+          <Button size="lg" colorScheme="pink" as={Link} isExternal href="https://docs.fetch.ai/aea" _hover={{textDecor: 'none', backgroundColor: "pink.600", color: 'pink.100'}}>Read the Docs</Button>
         </Box>
       </Center>
     </Box>
