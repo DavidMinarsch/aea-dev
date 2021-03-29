@@ -21,7 +21,7 @@ const IndexPage = () => (
       <Box backgroundImage={heroBackground} backgroundRepeat="repeat" display="inline" zIndex={1} h="100px" w="100px"></Box>
       <Center h="100%" zIndex={2}>
         <Box textAlign="center">
-          <Heading mb={6} size="2xl">Build the Foundations<br />of the Machine Economy</Heading>
+          <Heading mb={6} size="2xl">Agents that work for you,<br />and only for you</Heading>
           <Button size="lg" colorScheme="pink" as={Link} isExternal href="https://docs.fetch.ai/aea" _hover={{textDecor: 'none', backgroundColor: "pink.600", color: 'pink.100'}}>Read the Docs</Button>
         </Box>
       </Center>
@@ -34,7 +34,7 @@ const IndexPage = () => (
             <Divider my={6} w={50} mx="auto" />
           </Box>
           <SimpleGrid columns={{base: 1, md: 2}} spacing={10} alignItems="center">
-            <Text maxW="400">AEAs or Autonomous Economic Agents are software agents that act on behalf of a human or organisation to further their owner's economic goals.</Text>
+            <Text maxW="400">AEAs or Autonomous Economic Agents are software agents that act on behalf of a human or organisation to further their owner's economic goals.<br /><br />Equipped with cryptographic key pairs they send messages, trade on blockchains and perform other useful tasks for their owner. </Text>
             <Box backgroundColor="gray.900" borderRadius={10} textAlign="center" h="400"><Center h="100%"><Text>Illustration</Text></Center></Box>
           </SimpleGrid>
         </Box>
