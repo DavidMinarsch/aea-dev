@@ -17,7 +17,7 @@ const Footer = () => (
         </Flex>
       </Box>
       <HStack spacing={6}>
-        <Link isExternal href="https://twitter.com/"><FaTwitter /></Link>
+        <Link isExternal href="https://twitter.com/aea_dev"><FaTwitter /></Link>
         <Link isExternal href="https://github.com/fetchai/agents-aea"><FaGithub /></Link>
           <Link
             as={GatsbyLink}
