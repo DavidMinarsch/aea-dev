@@ -36,7 +36,7 @@ const CreatorsAndContributorsSection = () => {
       <Center>
         <Box mb={12} textAlign="center">
           <Box>
-            <Heading mb={6} size="lg" fontStyle="italic">
+            <Heading mb={6} size="lg" fontStyle="normal">
               Creators + Contributors
             </Heading>
             <Link

@@ -63,8 +63,8 @@ const IndexPage = () => (
       <Center h="100%">
         <Box>
           <Box textAlign="center" mb={12}>
-            <Heading mb={6} size="lg" fontStyle="italic">
-              What is AEA?
+            <Heading mb={6} size="lg" fontStyle="normal">
+              What are AEAs?
             </Heading>
             <Divider my={6} w={50} mx="auto" />
           </Box>
@@ -81,7 +81,7 @@ const IndexPage = () => (
               other useful tasks for their owner.
             </Text>
             <Center h="100%" w={400}>
-              <img src={whatIsAEAImage} alt="What is AEA?" />
+              <img src={whatIsAEAImage} alt="What are AEAs?" />
             </Center>
           </SimpleGrid>
         </Box>
@@ -92,7 +92,7 @@ const IndexPage = () => (
       <Center h="100%">
         <Box>
           <Box textAlign="center" mb={12}>
-            <Heading mb={6} size="lg" fontStyle="italic">
+            <Heading mb={6} size="lg" fontStyle="normal">
               Partners
             </Heading>
             <Divider my={6} w={50} mx="auto" />
@@ -121,7 +121,7 @@ const IndexPage = () => (
       id="research"
     >
       <Box textAlign="center" mb={12}>
-        <Heading mb={6} size="lg" fontStyle="italic">
+        <Heading mb={6} size="lg" fontStyle="normal">
           Research
         </Heading>
         <Divider my={6} w={50} mx="auto" />
@@ -220,7 +220,7 @@ const IndexPage = () => (
     </Box>
     <Box as="section" py={28} bgGradient="linear(to-br, gray.900, gray.700)">
       <Box textAlign="center" mb={12}>
-        <Heading mb={6} size="lg" fontStyle="italic">
+        <Heading mb={6} size="lg" fontStyle="normal">
           Latest from the Blog
         </Heading>
         <Link
