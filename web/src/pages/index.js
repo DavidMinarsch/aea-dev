@@ -74,9 +74,11 @@ const IndexPage = () => (
             alignItems="center"
           >
             <Text maxW="400">
-              AEAs or Autonomous Economic Agents are software agents that act on
-              behalf of a human or organisation to further their owner's
-              economic goals.
+              AEAs or Autonomous Economic Agents are software agents that act on 
+              behalf of a human or organisation to further their owner's 
+              economic goals.<br /><br />Equipped with cryptographic 
+              key pairs they send messages, trade on blockchains and perform
+              other useful tasks for their owner.
             </Text>
             <Center h="100%" w={400}>
               <img src={whatIsAEAImage} alt="What is AEA?" />
@@ -154,7 +156,7 @@ const IndexPage = () => (
             open-source implementation, study the result of the competitions we
             ran, and compare it to theoretical results in the economics
             literature. We conclude by discussing its real-world applications in
-            crypto-currency, digital assets and token trading
+            crypto-currency, digital assets and token trading.
           </Text>
           <Button
             as={Link}
