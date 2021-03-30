@@ -7,7 +7,7 @@ const TeamItem = (item) => {
   
   return (
     <Box as={Link} href={html_url} textAlign='center' maxW="300">
-      <Image borderRadius="full" boxSize={150} src={avatar_url} mx="auto" mb={3} />
+      <Image borderRadius="full" boxSize={125} src={avatar_url} mx="auto" mb={3} />
         <Heading mr={2} size="md">
           <Flex alignItems="center" justifyContent="center">
             <Box mr={2}>{login}</Box>
