@@ -1,7 +1,15 @@
+import {
+  Box,
+  Center,
+  Divider,
+  Heading,
+  Link,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react"
 import * as React from "react"
-import { Box, Center, Heading, Divider, SimpleGrid, Text } from "@chakra-ui/react"
-import TeamItem from "../team-item"
 import { useQuery } from "react-query"
+import TeamItem from "../team-item"
 
 const CreatorsAndContributorsSection = () => {
   const { isLoading, error, data: rawData } = useQuery("creatorsData", () =>
@@ -26,18 +34,27 @@ const CreatorsAndContributorsSection = () => {
       id="creators-and-contributors"
     >
       <Center>
-        <Box mb={12}>
-          <Box textAlign="center">
-            <Heading mb={6} size="lg" fontStyle="italic">
+        <Box mb={12} textAlign="center">
+          <Box>
+            <Heading mb={6} size="lg" fontStyle="normal">
               Creators + Contributors
             </Heading>
+            <Link
+              href="https://github.com/fetchai/agents-aea"
+              mb={6}
+              display="inline-block"
+              color="gray.200"
+              isExternal
+            >
+              Visit Github Repository →
+            </Link>
             <Divider my={6} w={50} mx="auto" />
           </Box>
           {error ? (
-            <Text>There was an error fetching the list of creators :(</Text>
+            <Text>Couldn't load contributor list</Text>
           ) : (
             <SimpleGrid
-              columns={{ base: 2, md: 4 }}
+              columns={{ base: 2, md: 4, lg: 5 }}
               spacing={10}
               textAlign="center"
             >
