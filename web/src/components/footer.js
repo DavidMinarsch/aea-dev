@@ -13,6 +13,7 @@ const Footer = () => (
             <Text>© AEA {new Date().getFullYear()}</Text>
             <Link as={GatsbyLink} to='/blog'>Blog</Link>
             <Link isExternal href='https://docs.fetch.ai/aea'>Docs</Link>
+            <Link isExternal href='https://opensea.io/collection/aea-v1-launch-commemorative'>Launch NFT Series</Link>
           </HStack>
         </Flex>
       </Box>
