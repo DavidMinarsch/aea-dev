@@ -24,9 +24,9 @@ In the following sections I discuss the framework, its motivation and applicatio
 
 ## Motivation
 
-The AEA framework evolved from work my team did at [Fetch.ai](https://fetch.ai) on our [trading agent competition (TAC)](https://github.com/fetchai/agents-tac) in 2019. At the time, the company had no agent framework and most development focus was on the ledger and several agent libraries. However, when working on the TAC we noticed that the library-based approach did not lend itself well to build agents in a repeatable and organised manner. Hence, we started looking into the idea of a framework which would allow us to build entire agents quickly through re-use of code and good encapsulation of functionalities.
+The AEA framework evolved from work my team did at [Fetch.ai](https://fetch.ai) on our [trading agent competition (TAC)](https://github.com/fetchai/agents-tac) in 2019. At the time, the company had no agent framework and most development focus was on the ledger and several agent libraries. However, when working on the TAC we noticed that the library-based approach did not lend itself well to build agents in a repeatable and organised manner. Hence, we started looking into the idea of a framework which would allow us to build entire agents quickly through re-use of code and encapsulation of functionalities.
 
-Based on my own experience in working with web frameworks like [Django](https://www.djangoproject.com) and [Ruby on Rails](https://rubyonrails.org) I was keen to replicate a similar experience for agent development. However, it was also clear, that unlike in web development, development of agents would be more challenging and that as a result it would be useful if developers could re-use not just framework-specific plugins but entire business logic components or agents.
+Based on my own experience in working with web frameworks like [Django](https://www.djangoproject.com) and [Ruby on Rails](https://rubyonrails.org) I was keen to replicate a similar experience for agent development. However, it was also clear, that unlike in web development, development of agents would be more challenging  - you're not just building for the user, you're building software to **represent** the user - and that as a result it would be useful if developers could re-use not just framework-specific plugins but entire business logic components or agents.
 
 Besides enabling Fetch.ai's vision of a DLT enabled multi-stakeholder multi-agent system I was personally also inspired by the challenge of creating a framework which allowed any user to run software under their full control, without reliance on a third party, and have that software work for them.
 
@@ -34,7 +34,8 @@ Fortunately, at Fetch.ai my colleagues Ali Hosseini and Marco Favorito were equa
 
 ## Framework design
 
-The framework is based around the concept of [asynchronous message passing](https://en.wikipedia.org/wiki/Message_passing) and uses an [actor](https://en.wikipedia.org/wiki/Actor_model)-like design paradigm. Messages are the primary means of communication between framework components as well as agents.
+The framework is based around the concept of [asynchronous message passing](https://en.wikipedia.org/wiki/Message_passing) and uses an [actor](https://en.wikipedia.org/wiki/Actor_model)-like design paradigm. Messages are the primary means of communication between framework components as well as agents. That is, [messages - unlike events - are directed](https://www.lightbend.com/blog/reactive-manifesto-20) towards a recipient and that recipient can be external or internal to the agent. 
+<!-- https://developer.lightbend.com/docs/akka-platform-guide/concepts/message-driven-event-driven.html -->
 
 The [framework](https://docs.fetch.ai/aea/diagram/) aims to allow for modularity and reuse. As such it defines four core components which make up an agent:
 
@@ -44,6 +45,8 @@ The [framework](https://docs.fetch.ai/aea/diagram/) aims to allow for modularity
 - [contracts](https://docs.fetch.ai/aea/contract/): wrap smart contracts for Fetch.ai and third-party decentralized ledgers. In particular, they provide wrappers around the API or ABI of a smart contract and its byte code.
 
 The developer develops some of the packages and places them in context to each other in an agent. The framework then calls the code in the packages. Unlike in libraries, frameworks make use of [inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control) and are running and calling the code.
+
+The code inside the packages follows the object oriented paradigm. ..
 
 Currently, the framework is [implemented](https://github.com/fetchai/agents-aea/) in the Python programming language. However, implementation in other languages is feasible too and importantly, it is fully interoperable with any language stack provided the protocols are implemented correctly. A demonstration of such interoperability with a simple agent implemented in Golang is provided [here]().
 
@@ -90,7 +93,7 @@ In the context of DLT AEAs act as off-chain elements. They can query ledger stat
 
 ## Application Areas
 
-By now, multiple application areas should come to mind. Some concrete themes are introduced here, but this should not be taken as an exhaustive list.
+By now, multiple application areas should come to mind. Some concrete themes are introduced here, but this should not be taken as an exhaustive list. The general theme spanning all these application areas is that of codifying interactions between different economic entities.
 
 1. automate user interactions with blockchains
 
@@ -150,34 +153,16 @@ As evident from the above list, the framework is a product for both developers a
 
 We hope you too will be part of a community of researchers and engineers working on the bleeding edge of technology in fields of machine learning, multi-agent systems and DLTs. Emphasis on Fetch being a research & innovation company takling classical hard problems known within their fields and new ones that emerges from the intersection of considered fields and expecting the *active involvement* of our users.
 
-Now, why not get started and [build your first](https://docs.fetch.ai/aea/quickstart) AEA?
+Now, why not get started and [build your first](https://docs.fetch.ai/aea/quickstart) AEA using our extensive documentation? And reach out to us on Twitter, Discord and IRL.
 
 
-
-
-agent: key-pair, some I/O unique to the agent, message based communication
-
-
-ACN properties: send and forget (a bit like UDP); 
-
-How to establish a stable protocol on top: timeout on skill side,
-
-How to deal with unordered messages? We need to queue; can do so in dialogues module; when next message arives we can dequeue;
-
-
-Vision: codify everything ?
-
-
-Check docs and link to them...
 Check AEA paper, protocol paper and ACN paper for snippets...
-
 
 agent is tasked with looking after their interest by maximising their utility. To this end, the agents must be made aware of their owners' preferences \cite{preferences} and values \cite{value}.
 
 
-https://how.complexsystems.fail
-
+<!-- https://how.complexsystems.fail
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Remember when the idea of an autonomous vehicle ($TSLA) using crypto to negotiate for road space, fuel, WiFi, etc. was Sci-Fi? Will be here before you know it.<a href="https://t.co/7KCwayRIlE">https://t.co/7KCwayRIlE</a> <a href="https://t.co/RVeogDcPso">pic.twitter.com/RVeogDcPso</a></p>&mdash; Cameron Winklevoss (@cameron) <a href="https://twitter.com/cameron/status/1359534967743725573?ref_src=twsrc%5Etfw">February 10, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In the last 3 months ARM shipped 6.7 billion CPUs. That&#39;s 842 chips per second. Compare that to 4.3 humans born per second. We now produce 200 times more computers per second than human beings.</p>&mdash; David Holz (@DavidSHolz) <a href="https://twitter.com/DavidSHolz/status/1360726586236968966?ref_src=twsrc%5Etfw">February 13, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In the last 3 months ARM shipped 6.7 billion CPUs. That&#39;s 842 chips per second. Compare that to 4.3 humans born per second. We now produce 200 times more computers per second than human beings.</p>&mdash; David Holz (@DavidSHolz) <a href="https://twitter.com/DavidSHolz/status/1360726586236968966?ref_src=twsrc%5Etfw">February 13, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
