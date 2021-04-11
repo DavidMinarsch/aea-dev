@@ -31,7 +31,7 @@ Based on my own experience in working with web frameworks like [Django](https://
 
 Besides enabling Fetch.ai's vision of a DLT enabled multi-stakeholder multi-agent system I was personally also inspired by the challenge of creating a framework which allowed any user to run software under their full control, without reliance on a third party, and have that software work for them.
 
-Fortunately, at Fetch.ai my colleagues Ali Hosseini and Marco Favorito were equally excited and committed to developimg a framework and provided the necessary background from MAS and (symbolic) AI. Senior management at Fetch.ai also backed the idea and provided the necessary support for its development.
+Fortunately, at Fetch.ai my colleagues Ali Hosseini and Marco Favorito were equally excited and committed to developing a framework and provided the necessary background from MAS and (symbolic) AI. Senior management at Fetch.ai also backed the idea and provided the necessary support for its development.
 
 ## Framework design
 
