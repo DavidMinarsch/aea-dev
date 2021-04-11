@@ -17,6 +17,7 @@ To do so, an agent usually needs to connect to and communicate with many other [
 An AEA is an agent that has capabilities to autonomously [transact](https://dictionary.cambridge.org/dictionary/english/transact) and engage in [other](https://en.wikipedia.org/wiki/Auction) [forms](https://en.wikipedia.org/wiki/Matching_theory_(economics)) of economic exchange with other AEAs, humans and organizations. The primary [settlement](https://en.wikipedia.org/wiki/Settlement_(finance)) and [commitment (or smart contracting)](https://en.wikipedia.org/wiki/Smart_contract) layer is facilitated by [Distributed Ledger Technologies](https://en.wikipedia.org/wiki/Distributed_ledger) (DLT).
 
 In programming terms, AEAs are defined by the software components they consist of, the data they are initialized with as well as the wallet they control. Their wallet contains cryptographic key-pairs which are used to sign [transactions](https://en.wikipedia.org/wiki/Blockchain) and messages.
+<!-- The AEA is tasked with looking after its owner's interest by maximizing their utility in a domain. To this end, the agents must be made aware of its owners' preferences \cite{preferences} and values \cite{value}. -->
 
 The AEA framework is not the first agent framework. In fact, there have been many frameworks proposed in the [literature](https://www.sciencedirect.com/science/article/pii/S1877705814002355) and multiple implementations exist, most prominently the Java-based [Jade](https://en.wikipedia.org/wiki/Java_Agent_Development_Framework), as well as several Python-based frameworks [1](https://spade-mas.readthedocs.io/en/latest/index.html), [2](https://pypi.org/project/pade/), [3](https://osbrain.readthedocs.io/en/stable/). What sets the AEA framework apart is that it has been built for a truly decentralized multi-stakeholder environment with native support for DLT and that it acts as a product for both developers and users of agents.
 
@@ -26,11 +27,11 @@ In the following sections I discuss the framework, its motivation and applicatio
 
 The AEA framework evolved from work my team did at [Fetch.ai](https://fetch.ai) on our [trading agent competition (TAC)](https://github.com/fetchai/agents-tac) in 2019. At the time, the company had no agent framework and most development focus was on the ledger and several agent libraries. However, when working on the TAC we noticed that the library-based approach did not lend itself well to build agents in a repeatable and organized manner. Hence, we started looking into the idea of a framework which would allow us to build entire agents quickly through re-use of code and encapsulation of functionalities.
 
-Based on my own experience in working with web frameworks like [Django](https://www.djangoproject.com) and [Ruby on Rails](https://rubyonrails.org) I was keen to replicate a similar experience for agent development. However, it was also clear, that unlike in web development, development of agents would be more challenging  - you are not just building for the user, you are building software to **represent** the user - and that as a result it would be useful if developers could re-use not just framework-specific plugins but entire business logic components or agents.
+Based on my own experience in working with web frameworks like [Django](https://www.djangoproject.com) and [Ruby on Rails](https://rubyonrails.org) I was keen to replicate a similar experience for agent development. However, it was also clear, that unlike in web development, development of agents would be more challenging  - the developer is not just building for the user, they are building software to **represent** the user - and that as a result it would be useful if developers could re-use not just framework-specific plugins but entire business logic components or agents.
 
 Besides enabling Fetch.ai's vision of a DLT enabled multi-stakeholder multi-agent system I was personally also inspired by the challenge of creating a framework which allowed any user to run software under their full control, without reliance on a third party, and have that software work for them.
 
-Fortunately, at Fetch.ai my colleagues Ali Hosseini and Marco Favorito were equally excited about the framework concept and provided the necessary background from MAS and (symbolic) AI. Senior management at Fetch.ai also backed the idea and provided the necessary support.
+Fortunately, at Fetch.ai my colleagues Ali Hosseini and Marco Favorito were equally excited and committed to developimg a framework and provided the necessary background from MAS and (symbolic) AI. Senior management at Fetch.ai also backed the idea and provided the necessary support for its development.
 
 ## Framework design
 
@@ -39,28 +40,28 @@ The framework is based around the concept of [asynchronous message passing](http
 
 The [framework](https://docs.fetch.ai/aea/diagram/) aims to allow for modularity and reuse. As such it defines four core components which make up an agent:
 
-- [skills](https://docs.fetch.ai/aea/skill/): are the core focus of the framework's extensibility as they implement business logic to deliver economic value for the AEA and its owner. Skills are where we treat complexity.
+- [skills](https://docs.fetch.ai/aea/skill/): are the core focus of the framework's extensibility as they implement business logic to deliver economic value for the AEA and its owner. Skills are treated like black boxes by the framework and can contain simple conditional logic or advanced reinforcement learning algorithms, for instance.
 - [connections](https://docs.fetch.ai/aea/connection/): wrap an SDK or API and provide an interface to network, ledgers and other services. Where necessary, a connection is responsible for translating between the framework specific protocols and the external service or third-party protocol (e.g. HTTP).
-- [protocols](https://docs.fetch.ai/aea/protocol/): define agent-to-agent as well as component-to-component interactions within agents. As such, they include `Messages`, which define the representation, serialization logic, which define how a `Message` is encoded for transport; and, optionally `Dialogues`, which define rules over `Message` sequences.
+- [protocols](https://docs.fetch.ai/aea/protocol/): define agent-to-agent as well as component-to-component interactions within agents. As such, they include messages, which define the representation, serialization logic, which define how a message is encoded for transport; and, dialogues, which define rules over message sequences for a given protocol.
 - [contracts](https://docs.fetch.ai/aea/contract/): wrap smart contracts for Fetch.ai and third-party decentralized ledgers. In particular, they provide wrappers around the API or ABI of a smart contract and its byte code.
 
 The developer develops some packages and places them in context to each other in an agent. The framework then calls the code in the packages. Unlike in libraries, frameworks make use of [inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control) and are running and calling the code.
 
-The code inside the packages follows the object-oriented paradigm. ..
+<!-- The code inside the packages follows the object-oriented paradigm. .. -->
 
-Currently, the framework is [implemented](https://github.com/fetchai/agents-aea/) in the Python programming language. However, implementation in other languages is feasible too and importantly, it is fully interoperable with any language stack provided the protocols are implemented correctly. A demonstration of such interoperability with a simple agent implemented in Golang is provided [here]().
+Currently, the framework is [implemented](https://github.com/fetchai/agents-aea/) in the Python programming language. However, implementation in other languages is feasible too and importantly, it is fully interoperable with any language stack provided the protocols are implemented correctly. A demonstration of such interoperability with a simple agent implemented in Golang is provided [here](https://github.com/fetchai/agents-aea/tree/main/libs/go/aealite).
 
-Together, these four components can be utilized to establish interaction protocols between entities.
+Together, these four components can be utilized to establish [interaction protocols](https://en.wikipedia.org/wiki/Interaction_protocol) between entities.
 
 The framework also offers auxiliary tools and services, including a command line interface (CLI), a protocol generator to generate protocols' code from their specifications, test tools, a registry for framework packages, and a desktop app to run finished agents.
 
-In its design, the framework makes no assumptions about the type of agents implemented with it. As discussed below, it can be used in a wide range of application areas.
+In its design, the framework makes no assumptions about the [type of agents](https://en.wikipedia.org/wiki/Software_agent) implemented with it. As discussed below, it can be used in a wide range of application areas.
 
 ## Research
 
-Agent frameworks and multi-agent systems (MAS) have only found limited real-world applications despite being developed in the research community for multiple decades [](http://jasss.soc.surrey.ac.uk/18/1/11.html) and [](https://www.researchgate.net/publication/298411597_Introduction_to_the_Special_Issue_Ten_Years_of_Autonomous_Agents_and_Multiagent_Systems). We hope that the AEA framework will see adoption in and contributions from the wider MAS community.
+Agent frameworks and multi-agent systems (MAS) have only found limited real-world applications despite being developed in the research community for multiple decades ([1](http://jasss.soc.surrey.ac.uk/18/1/11.html), [2](https://www.researchgate.net/publication/298411597_Introduction_to_the_Special_Issue_Ten_Years_of_Autonomous_Agents_and_Multiagent_Systems)). We hope that the AEA framework will see adoption in and contributions from the wider MAS community.
 
-We have written a number of research papers to present our work to the wider MAS community [](). Furthermore, we were also fortunate to gain the advice from eminent researchers in the space including Mark Woolford ()[] and Ani ()[] at Oxford University.
+We have written a number of [research papers](https://aea.dev/#research) to present our work to the wider MAS community. Furthermore, we were also fortunate to gain the advice from eminent researchers in the space including [Michael Wooldridge](https://www.ox.ac.uk/news-and-events/find-an-expert/professor-michael-wooldridge) and [Anisoara Calinescu](https://www.cs.ox.ac.uk/people/ani.calinescu/) at Oxford University.
 
 We welcome the AI research community to contribute to the framework's further development and help us improve the role for machine learning, reinforcement learning and other AI approaches in the framework. We hope the MAS research community will help us improve the agent interactions (protocols, skills) and other framework primitives. Economists can help us implement additional mechanisms for multi-stakeholder agent economies. Developers of web3 tools like Brownie and Vyper for instance, might help us integrate them with the framework. We invite everyone to contribute where they can do so!
 
@@ -154,12 +155,6 @@ As evident from the above list, the framework is a product for both developers a
 We hope you too will be part of a community of researchers and engineers working on the bleeding edge of technology in the fields of machine learning, multi-agent systems and DLTs. Emphasis on Fetch being a research & innovation company tackling classical hard problems known within their fields and new ones that emerges from the intersection of considered fields and expecting the *active involvement* of our users.
 
 Now, why not get started and [build your first](https://docs.fetch.ai/aea/quickstart) AEA using our extensive documentation? And reach out to us on Twitter, Discord and IRL.
-
-
-Check AEA paper, protocol paper and ACN paper for snippets...
-
-agent is tasked with looking after their interest by maximizing their utility. To this end, the agents must be made aware of their owners' preferences \cite{preferences} and values \cite{value}.
-
 
 <!-- https://how.complexsystems.fail
 
