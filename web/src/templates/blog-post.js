@@ -3,12 +3,14 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import React from "react"
+import SEO from "../components/seo"
 
 const BlogPost = ({ data }) => {
   const { frontmatter, body } = data.mdx
   const imageFluid = frontmatter.image.childImageSharp.fluid
   return (
     <>
+      <SEO title={frontmatter.title} />
       <Box mb={6}>
         <Img fluid={imageFluid} />
       </Box>
