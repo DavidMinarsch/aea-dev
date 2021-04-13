@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/layout"
+import { Box, Heading } from "@chakra-ui/layout"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
