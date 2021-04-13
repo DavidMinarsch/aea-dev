@@ -4,18 +4,9 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
-import { wrapPageElement as wrap } from './src/root-wrapper'
-import React from "react"
-import theme from "./src/theme"
-import { ColorModeScript } from "@chakra-ui/react"
 
-export const wrapPageElement = wrap
-
-export const onRenderBody = ({ setPreBodyComponents }) => {
-  setPreBodyComponents([
-    <ColorModeScript
-      initialColorMode={theme.config.initialColorMode}
-      key="chakra-ui-no-flash"
-    />
-  ])
-}
+ import { wrapPageElement as wrapPage, wrapRootElement as wrapRoot } from './src/root-wrapper'
+ 
+ export const wrapPageElement = wrapPage
+ 
+ export const wrapRootElement = wrapRoot
