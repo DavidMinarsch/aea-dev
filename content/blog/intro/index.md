@@ -151,6 +151,6 @@ As evident from the above list, the framework is **a product for both developers
 
 - As a researcher, you can contribute to the evolution of the framework. We just painted the rough strokes, there are many gaps to fill!
 
-We hope you too will be part of a community of researchers and engineers working on the bleeding edge of technology in the fields of machine learning, MAS and DLTs. Emphasis on Fetch being a research & innovation company tackling classical hard problems known within their fields and new ones that emerges from the intersection of considered fields and expecting the *active involvement* of our users.
+We hope you too will be part of a community of researchers and engineers working on the bleeding edge of technology in the fields of machine learning, MAS and DLTs.
 
 Now, why not get started and [build your first](https://docs.fetch.ai/aea/quickstart) AEA using our extensive documentation? And reach out to us on [Twitter](https://twitter.com/aea_dev), [GitHub - aea](https://github.com/fetchai/agents-aea/discussions), [GitHub - aea.dev](https://github.com/DavidMinarsch/aea-dev/discussions) and IRL.
