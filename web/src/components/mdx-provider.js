@@ -8,7 +8,7 @@ const MDXH3 = props => <Heading size='md' mb={3} {...props} />
 const MDXText = props => (
   <Text mb={3} {...props} />
 )
-const Blockquote = props => <Text {...props} fontStyle='italic' style={{'background': '#1a001f'}} />
+// const Blockquote = props => <Text {...props} fontStyle='italic' style={{'background': '#1a001f'}} />
 
 const components = {
   h2: MDXH2,
@@ -18,7 +18,6 @@ const components = {
   ul: props => <UnorderedList {...props} mb={3} />,
   li: props => <ListItem {...props} mb={3} />,
   a: props => <MarkdownLink {...props} />,
-  blockquote: Blockquote
 }
 
 const MDXProvider = ({ children }) => (

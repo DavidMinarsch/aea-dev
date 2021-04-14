@@ -26,12 +26,12 @@ const MarkdownLink = ({ href, ...rest }) => {
   }
 
   return (
-    <a
+    <a  // eslint-disable-line jsx-a11y/anchor-has-content
       data-link-external
       href={href}
       target="_blank"
       rel="noopener noreferrer nofollow"
-      style={{'text-decoration': 'underline'}}
+      style={{'textDecoration': 'underline'}}
       {...rest}
     />
   )
