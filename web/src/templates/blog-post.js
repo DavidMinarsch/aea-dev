@@ -14,6 +14,7 @@ const BlogPost = ({ data }) => {
         title={frontmatter.title}
         description={frontmatter.excerpt}
         image={imageFluid}
+        pathname={frontmatter.slug}
       />
       <Box mb={6}>
         <Img fluid={imageFluid} />
