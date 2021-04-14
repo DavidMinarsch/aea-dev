@@ -6,10 +6,10 @@ import logo from '../images/aea-logo.svg'
 const MenuItems = ({showMd, isOpen = false}) => 
   <Flex>
     <Stack spacing={6} display={{base: showMd, lg: 'inherit'}} direction={{base: 'column', lg: 'row'}} alignItems={isOpen ? 'start' : 'center'}>
-      <Link as={GatsbyLink}  to="/#what-is-aea" smooth={true} offset={-75} duration={200}>What are AEAs?</Link>
-      <Link as={GatsbyLink}  to="/#creators-and-contributors" smooth={true} offset={-75} duration={200}>Creators + Contributors</Link>
-      <Link as={GatsbyLink}  to="/#partners" smooth={true} offset={-75} duration={200}>Partners</Link>
-      <Link as={GatsbyLink}  to="/#research" smooth={true} offset={-75} duration={200}>Research</Link>
+      <Link as={GatsbyLink}  to="/#what-is-aea" smooth={"true"} offset={-75} duration={200}>What are AEAs?</Link>
+      <Link as={GatsbyLink}  to="/#creators-and-contributors" smooth={"true"} offset={-75} duration={200}>Creators + Contributors</Link>
+      <Link as={GatsbyLink}  to="/#partners" smooth={"true"} offset={-75} duration={200}>Partners</Link>
+      <Link as={GatsbyLink}  to="/#research" smooth={"true"} offset={-75} duration={200}>Research</Link>
       <Link as={GatsbyLink} to='/blog' mr={6}>Blog</Link>
       <Button as={Link} href="https://docs.fetch.ai/aea" isExternal display={{base: showMd, lg: 'inherit'}} colorScheme="pink" size='lg'>Read the Docs</Button>
     </Stack>
