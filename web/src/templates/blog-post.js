@@ -10,7 +10,11 @@ const BlogPost = ({ data }) => {
   const imageFluid = frontmatter.image.childImageSharp.fluid
   return (
     <>
-      <SEO title={frontmatter.title} />
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.excerpt}
+        image={imageFluid}
+      />
       <Box mb={6}>
         <Img fluid={imageFluid} />
       </Box>
@@ -36,6 +40,7 @@ export const query = graphql`
       frontmatter {
         title
         author
+        excerpt
         image {
           childImageSharp {
             fluid(maxWidth: 1500, maxHeight: 500) {
