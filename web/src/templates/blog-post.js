@@ -1,28 +1,31 @@
-import { Box, Heading, Text } from '@chakra-ui/layout';
-import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
-import Img from 'gatsby-image'
+import { Box, Heading } from "@chakra-ui/layout"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import React from "react"
+import SEO from "../components/seo"
 
-const BlogPost =  (
-  { data }
-  ) => {
-  const { frontmatter, body } = data.mdx;
+const BlogPost = ({ data }) => {
+  const { frontmatter, body } = data.mdx
   const imageFluid = frontmatter.image.childImageSharp.fluid
   return (
     <>
-      {/* <Dump data={data.mdx} /> */}
+      <SEO title={frontmatter.title} />
       <Box mb={6}>
         <Img fluid={imageFluid} />
       </Box>
       <Box maxW="52ch" mx="auto" my={12} px={6}>
-        <Heading size="2xl" mb={6}>{frontmatter.title}</Heading>
-        <Heading size="md" mb={6}>{frontmatter.author} · {frontmatter.date}</Heading>
-        <MDXRenderer components={[Text]}>{body}</MDXRenderer>
+        <Heading size="2xl" mb={6}>
+          {frontmatter.title}
+        </Heading>
+        <Heading size="md" mb={6}>
+          {frontmatter.author} · {frontmatter.date}
+        </Heading>
+        <MDXRenderer>{body}</MDXRenderer>
       </Box>
     </>
-  );
-};
+  )
+}
 
 export default BlogPost
 
@@ -44,4 +47,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

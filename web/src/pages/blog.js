@@ -2,11 +2,13 @@ import { Box, Heading, Text, Button, SimpleGrid } from '@chakra-ui/react';
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import Img from 'gatsby-image'
+import SEO from '../components/seo';
 
 const Blog = ({data}) => {
   
   return ( 
     <>
+      <SEO title="Blog" />
       <Box px={6} py={28} maxW={1200} mx="auto">
         <Heading size="4xl" mb={12}>Blog</Heading>
         {

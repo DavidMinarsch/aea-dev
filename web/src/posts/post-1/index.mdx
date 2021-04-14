@@ -45,7 +45,7 @@ The [framework](https://docs.fetch.ai/aea/diagram/) aims to allow for modularity
 - [protocols](https://docs.fetch.ai/aea/protocol/): define agent-to-agent as well as component-to-component interactions within agents. As such, they include messages, which define the representation, serialization logic, which define how a message is encoded for transport; and, dialogues, which define rules over message sequences for a given protocol.
 - [contracts](https://docs.fetch.ai/aea/contract/): wrap (access to) smart contracts for Fetch.ai and third-party decentralized ledgers. In particular, they provide wrappers around the API or [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) of a smart contract and its byte code.
 
-The developer develops some packages or reuses those packages developed by others and then places them in context to each other in an AEA. The framework then calls the code in the packages. Unlike in libraries, it is the framework that runs and calls the code by making use of inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control).
+The developer develops some packages or reuses those packages developed by others and then places them in context to each other in an AEA. The framework then calls the code in the packages. Unlike in libraries, it is the framework that runs and calls the code by making use of [inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control).
 
 Currently, the framework is [implemented](https://github.com/fetchai/agents-aea/) in the Python programming language. However, implementation in other languages is feasible too and importantly, it is fully interoperable with any language stack provided the protocols are implemented correctly. A demonstration of such interoperability with a simple agent implemented in Golang is provided [here](https://github.com/fetchai/agents-aea/tree/main/libs/go/aealite).
 
@@ -69,7 +69,7 @@ We welcome the AI research community to contribute to the framework's further de
 
 AEAs use the public internet for message transport. The [agent communication network](https://docs.fetch.ai/aea/acn/) allows AEAs to communicate knowing their cryptographic addresses alone. The ACN is a multi-tier messaging system with a peer-to-peer overlay network at its core. The peers maintain a [distributed hash table](https://en.wikipedia.org/wiki/Distributed_hash_table) that maps addresses to network addresses.
 
-![ACN](/images/acn.svg)
+![ACN](../../images/acn.svg)
 
 The messages are part of a protocol for agent communication. The AEA framework allows developers to use existing protocols, create new protocols and share them with other developers via the [AEA registry](aea-registry.fetch.ai).
 
@@ -102,7 +102,7 @@ By now, multiple application areas should come to mind. Some concrete themes are
 
 	Users are heavily constrained when using blockchains by the web clients they have access to and their own abilities. An AEA can interact with a blockchain much faster, more securely and with more protocols than a human ever could.
 
-	<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">One use case this enables is a smart wallet as described by <a href="https://twitter.com/StaniKulechov?ref_src=twsrc%5Etfw">@StaniKulechov</a> . The AEA can take care of all the complexity involved in managing this. If you’re keen to build this or other DeFi applications using AEAs then reach out! <a href="https://t.co/hFGMJgNpVg">https://t.co/hFGMJgNpVg</a></p>&mdash; David Minarsch (@david_enim) <a href="https://twitter.com/david_enim/status/1369572082917507074?ref_src=twsrc%5Etfw">March 10, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Also imagine in the future wallet just detects on which network you have funds, you send, all the gas/tx fee management happens under the hood</p>&mdash; stani.eth 👻 =(⬤_⬤)= 👻 (@StaniKulechov) <a href="https://twitter.com/StaniKulechov/status/1366761244712194050?ref_src=twsrc%5Etfw">March 2, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 3. abstract ledger specifics for developers
 
