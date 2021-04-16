@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `AEA`,
-    description: `Learn to Build Machine Agents.`,
+    description: `Agents that work for you, and only for you.`,
     author: `Team AEA`,
+    siteUrl: 'https://aea.dev',
+    keywords: ["autonomous economic agents", "aea", "multi-agent systems", "blockchain"]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
