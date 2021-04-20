@@ -19,6 +19,7 @@ import heroBackground from "../images/hero-background.png"
 import whatIsAEAImage from "../images/what-is-aea.jpg"
 import research1Image from "../images/research-1.jpg"
 import research2Image from "../images/research-2.jpg"
+import research3Image from "../images/research-3.jpg"
 
 import { FaTwitter } from "react-icons/fa"
 import { QueryClientProvider, QueryClient } from "react-query"
@@ -135,6 +136,50 @@ const IndexPage = () => (
         alignItems="center"
         px={6}
       >
+        <Center h="100%">
+          <img src={research3Image} alt="AEA Research 3" />
+        </Center>
+        <Box>
+          <Heading mb={3}>
+            Peer-to-peer Autonomous Agent Communication Network
+          </Heading>
+          <Heading size="md" mb={3}>
+            Lokman Rahmani, David Minarsch, Jonathan Ward
+          </Heading>
+          <Text mb={6}>
+            Reliable and secure communication between heterogeneously resourced
+            autonomous agents controlled by competing stakeholders in a decentralized
+            environment is a challenge. Agents require a means to find each other
+            and communicate without reliance on a centralized party and participation
+            in the system must be permissionless. We present the Agent Communication
+            Network (ACN), a peer-to-peer lookup system that provides a distributed
+            overlay to the Internet and addresses this problem. The ACN enables agents
+            to find each other and to communicate safely. It achieves this by
+            leveraging a distributed hash table for agent lookup, maintained by
+            participating peers and through the use of public-key cryptography.
+            The paper discusses the properties of the system and its guarantees as
+            well as its integration with a novel multi-agent system. Preliminary
+            benchmark results demonstrate the feasibility of the system, its
+            performance, and its scalability.
+          </Text>
+          <Button
+            as={Link}
+            isExternal
+            href="http://www.ifaamas.org/Proceedings/aamas2021/pdfs/p1037.pdf"
+          >
+            Read the Paper
+          </Button>
+        </Box>
+      </SimpleGrid>
+      <SimpleGrid
+        mb={12}
+        columns={{ base: 1, lg: 2 }}
+        spacing={10}
+        maxW={1400}
+        mx="auto"
+        alignItems="center"
+        px={6}
+      >
         <Box>
           <Heading mb={3}>
             Trading Agent Competition with Autonomous Economic Agents
@@ -167,7 +212,7 @@ const IndexPage = () => (
           </Button>
         </Box>
         <Center h="100%">
-          <img src={research1Image} alt="AEA Research 1" />
+          <img src={research2Image} alt="AEA Research 2" />
         </Center>
       </SimpleGrid>
       <SimpleGrid
@@ -179,7 +224,7 @@ const IndexPage = () => (
         px={6}
       >
         <Center h="100%">
-          <img src={research2Image} alt="AEA Research 2" />
+          <img src={research1Image} alt="AEA Research 1" />
         </Center>
         <Box>
           <Heading mb={3}>
