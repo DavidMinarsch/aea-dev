@@ -12,14 +12,14 @@ const Footer = () => (
           <HStack spacing={6}>
             <Text>© AEA {new Date().getFullYear()}</Text>
             <Link as={GatsbyLink} to='/blog'>Blog</Link>
-            <Link isExternal href='https://docs.fetch.ai/aea'>Docs</Link>
+            <Link isExternal href='https://stack.olas.network/open-aea/'>Docs</Link>
             <Link isExternal href='https://opensea.io/collection/aea-v1-launch-commemorative'>Launch NFT Series</Link>
           </HStack>
         </Flex>
       </Box>
       <HStack spacing={6}>
         <Link isExternal href="https://twitter.com/aea_dev"><FaTwitter /></Link>
-        <Link isExternal href="https://github.com/fetchai/agents-aea"><FaGithub /></Link>
+        <Link isExternal href="https://github.com/valory-xyz/open-aea"><FaGithub /></Link>
           <Link
             as={GatsbyLink}
             to="/"

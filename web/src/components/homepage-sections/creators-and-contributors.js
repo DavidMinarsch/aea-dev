@@ -14,7 +14,7 @@ import TeamItem from "../team-item"
 const CreatorsAndContributorsSection = () => {
   const { isLoading, error, data: rawData } = useQuery("creatorsData", () =>
     fetch(
-      "https://api.github.com/repos/fetchai/agents-aea/contributors"
+      "https://api.github.com/repos/valory-xyz/open-aea/contributors"
     ).then(res => res.json())
   )
 
@@ -40,7 +40,7 @@ const CreatorsAndContributorsSection = () => {
               Creators + Contributors
             </Heading>
             <Link
-              href="https://github.com/fetchai/agents-aea"
+              href="https://github.com/valory-xyz/open-aea"
               mb={6}
               display="inline-block"
               color="gray.200"

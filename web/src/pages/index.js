@@ -50,7 +50,7 @@ const IndexPage = () => (
       <Center h="100%" zIndex={2}>
         <Box textAlign="center">
           <Heading mb={6} size="2xl">Agents that work for you,<br />and only for you</Heading>
-          <Button size="lg" colorScheme="pink" as={Link} isExternal href="https://docs.fetch.ai/aea" _hover={{textDecor: 'none', backgroundColor: "pink.600", color: 'pink.100'}}>Read the Docs</Button>
+          <Button size="lg" colorScheme="pink" as={Link} isExternal href="https://stack.olas.network/open-aea/" _hover={{textDecor: 'none', backgroundColor: "pink.600", color: 'pink.100'}}>Read the Docs</Button>
         </Box>
       </Center>
     </Box>
